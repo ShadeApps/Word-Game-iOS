@@ -9,17 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
+	
+	@IBOutlet weak var lblScore: UILabel!
+	@IBOutlet weak var lblPossibleTranslation: UILabel!
+	@IBOutlet weak var lblTargetWord: UILabel!
+	@IBOutlet weak var topWordConstraint: NSLayoutConstraint!
+
+	var processWatcher = ProcessWatcher()
+
+	override func prefersStatusBarHidden() -> Bool {
+		return true
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		processWatcher.startGame(lblScore, translationLabel: lblPossibleTranslation, mainLabel: lblTargetWord)
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
+	@IBAction func btnYesTapped(sender: AnyObject) {
+		processWatcher.react(GameInput.Yes)
 	}
 
-
+	@IBAction func btnNoTapped(sender: AnyObject) {
+		processWatcher.react(GameInput.No)
+	}
 }
-

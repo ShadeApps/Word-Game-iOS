@@ -16,6 +16,9 @@
 		40CE0C171D5B8A8C00E92756 /* WordGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0C161D5B8A8C00E92756 /* WordGameUITests.swift */; };
 		40CE0C271D5B8AE400E92756 /* CodeChallengeiOS.pages.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 40CE0C251D5B8AE400E92756 /* CodeChallengeiOS.pages.pdf */; };
 		40CE0C281D5B8AE400E92756 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 40CE0C261D5B8AE400E92756 /* words.json */; };
+		40CE0C301D5E362B00E92756 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0C2F1D5E362B00E92756 /* Constants.swift */; };
+		40CE0C321D5E374200E92756 /* ProcessWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0C311D5E374200E92756 /* ProcessWatcher.swift */; };
+		40CE0C351D5F01AA00E92756 /* WordListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0C341D5F01A900E92756 /* WordListWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		40CE0C181D5B8A8C00E92756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40CE0C251D5B8AE400E92756 /* CodeChallengeiOS.pages.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CodeChallengeiOS.pages.pdf; sourceTree = "<group>"; };
 		40CE0C261D5B8AE400E92756 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
+		40CE0C2F1D5E362B00E92756 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		40CE0C311D5E374200E92756 /* ProcessWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessWatcher.swift; sourceTree = "<group>"; };
+		40CE0C341D5F01A900E92756 /* WordListWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordListWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 				40CE0BF61D5B8A8C00E92756 /* AppDelegate.swift */,
 				40CE0BF81D5B8A8C00E92756 /* ViewController.swift */,
 				40CE0BFA1D5B8A8C00E92756 /* Main.storyboard */,
+				40CE0C331D5E376500E92756 /* Misc */,
 				40CE0C241D5B8AC600E92756 /* Resources */,
 			);
 			path = WordGame;
@@ -137,6 +144,16 @@
 				40CE0C021D5B8A8C00E92756 /* Info.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		40CE0C331D5E376500E92756 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				40CE0C311D5E374200E92756 /* ProcessWatcher.swift */,
+				40CE0C341D5F01A900E92756 /* WordListWorker.swift */,
+				40CE0C2F1D5E362B00E92756 /* Constants.swift */,
+			);
+			name = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,8 +289,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40CE0C351D5F01AA00E92756 /* WordListWorker.swift in Sources */,
+				40CE0C321D5E374200E92756 /* ProcessWatcher.swift in Sources */,
 				40CE0BF91D5B8A8C00E92756 /* ViewController.swift in Sources */,
 				40CE0BF71D5B8A8C00E92756 /* AppDelegate.swift in Sources */,
+				40CE0C301D5E362B00E92756 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +522,7 @@
 				40CE0C1D1D5B8A8C00E92756 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40CE0C1E1D5B8A8C00E92756 /* Build configuration list for PBXNativeTarget "WordGameTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +531,7 @@
 				40CE0C201D5B8A8C00E92756 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40CE0C211D5B8A8C00E92756 /* Build configuration list for PBXNativeTarget "WordGameUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +540,7 @@
 				40CE0C231D5B8A8C00E92756 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
