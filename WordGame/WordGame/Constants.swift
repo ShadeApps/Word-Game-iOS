@@ -13,7 +13,7 @@ struct UI {
 }
 
 struct GameProcess {
-	static let TimeForIteration = 15
+	static let TimeForIteration : Float = 15.0
 
 	static let PointsForIteration = 5
 
