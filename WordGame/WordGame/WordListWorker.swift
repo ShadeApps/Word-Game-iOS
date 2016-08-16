@@ -10,17 +10,23 @@ import UIKit
 
 class WordListWorker: NSObject{
 
-	class func fullList() -> NSArray?{
-		let pathString : NSURL = NSBundle.mainBundle().URLForResource("words", withExtension: "json")!
-		let data = NSData.init(contentsOfURL: NSURL.init(string: pathString.absoluteString)!)
+	static var fullList : NSArray?{
+		get {
+			let pathString : NSURL? = NSBundle.mainBundle().URLForResource(WordList.FileName, withExtension: WordList.FileExtension)
 
-		do{
-			let MyData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? NSArray
-			print(MyData)
-			return MyData
-		}
-		catch let error as NSError{
-			print(error.description)
+			if pathString != nil {
+				let data = NSData.init(contentsOfURL: NSURL.init(string: pathString!.absoluteString)!)
+
+				do{
+					let MyData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? NSArray
+					return MyData
+				}
+				catch let error as NSError{
+					print(error.description)
+					return nil
+				}
+			}
+
 			return nil
 		}
 	}

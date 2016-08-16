@@ -10,6 +10,11 @@ import Foundation
 
 struct UI {
 	static let TopConstantHeight = 8
+	static let WinMessage = "Congratulations! You won! 👾🏅"
+	static let LoseMessage = "Oh no! You lost! 😩💔"
+	static let GameStartErrorMessage = "Something went wrong and it's not your fault. We're sorry 😢😓"
+
+	static let CloseTitle = "Close"
 }
 
 struct GameProcess {
@@ -24,9 +29,23 @@ struct GameProcess {
 enum GameResult {
 	case Win
 	case Lose
+	case Error
 }
 
 enum GameInput {
 	case Yes
 	case No
+}
+
+struct WordList {
+
+	static let FileName = "words"
+	static let FileExtension = "json"
+
+	static let EnText = "text_eng"
+	static let EsText = "text_spa"
+}
+
+struct AppInfo {
+	static let URL = "http://stackoverflow.com/users/1313939/sergiusgee?tab=profile"
 }

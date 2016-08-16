@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4051A1F01D632AFC00AAEC51 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4051A1EF1D632AFC00AAEC51 /* Extensions.swift */; };
+		4051A1F21D635C1700AAEC51 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4051A1F11D635C1700AAEC51 /* StartViewController.swift */; };
 		40CE0BF71D5B8A8C00E92756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0BF61D5B8A8C00E92756 /* AppDelegate.swift */; };
-		40CE0BF91D5B8A8C00E92756 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0BF81D5B8A8C00E92756 /* ViewController.swift */; };
+		40CE0BF91D5B8A8C00E92756 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0BF81D5B8A8C00E92756 /* MainViewController.swift */; };
 		40CE0BFC1D5B8A8C00E92756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CE0BFA1D5B8A8C00E92756 /* Main.storyboard */; };
 		40CE0BFE1D5B8A8C00E92756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CE0BFD1D5B8A8C00E92756 /* Assets.xcassets */; };
 		40CE0C011D5B8A8C00E92756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CE0BFF1D5B8A8C00E92756 /* LaunchScreen.storyboard */; };
 		40CE0C0C1D5B8A8C00E92756 /* WordGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0C0B1D5B8A8C00E92756 /* WordGameTests.swift */; };
 		40CE0C171D5B8A8C00E92756 /* WordGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0C161D5B8A8C00E92756 /* WordGameUITests.swift */; };
-		40CE0C271D5B8AE400E92756 /* CodeChallengeiOS.pages.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 40CE0C251D5B8AE400E92756 /* CodeChallengeiOS.pages.pdf */; };
 		40CE0C281D5B8AE400E92756 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 40CE0C261D5B8AE400E92756 /* words.json */; };
 		40CE0C301D5E362B00E92756 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0C2F1D5E362B00E92756 /* Constants.swift */; };
 		40CE0C321D5E374200E92756 /* ProcessWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0C311D5E374200E92756 /* ProcessWatcher.swift */; };
@@ -39,9 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4051A1EF1D632AFC00AAEC51 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4051A1F11D635C1700AAEC51 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		40CE0BF31D5B8A8C00E92756 /* WordGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CE0BF61D5B8A8C00E92756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		40CE0BF81D5B8A8C00E92756 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		40CE0BF81D5B8A8C00E92756 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		40CE0BFB1D5B8A8C00E92756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40CE0BFD1D5B8A8C00E92756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40CE0C001D5B8A8C00E92756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,7 +55,6 @@
 		40CE0C121D5B8A8C00E92756 /* WordGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CE0C161D5B8A8C00E92756 /* WordGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGameUITests.swift; sourceTree = "<group>"; };
 		40CE0C181D5B8A8C00E92756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40CE0C251D5B8AE400E92756 /* CodeChallengeiOS.pages.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CodeChallengeiOS.pages.pdf; sourceTree = "<group>"; };
 		40CE0C261D5B8AE400E92756 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		40CE0C2F1D5E362B00E92756 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		40CE0C311D5E374200E92756 /* ProcessWatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessWatcher.swift; sourceTree = "<group>"; };
@@ -108,7 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				40CE0BF61D5B8A8C00E92756 /* AppDelegate.swift */,
-				40CE0BF81D5B8A8C00E92756 /* ViewController.swift */,
+				4051A1F11D635C1700AAEC51 /* StartViewController.swift */,
+				40CE0BF81D5B8A8C00E92756 /* MainViewController.swift */,
 				40CE0BFA1D5B8A8C00E92756 /* Main.storyboard */,
 				40CE0C331D5E376500E92756 /* Misc */,
 				40CE0C241D5B8AC600E92756 /* Resources */,
@@ -137,7 +140,6 @@
 		40CE0C241D5B8AC600E92756 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				40CE0C251D5B8AE400E92756 /* CodeChallengeiOS.pages.pdf */,
 				40CE0C261D5B8AE400E92756 /* words.json */,
 				40CE0BFD1D5B8A8C00E92756 /* Assets.xcassets */,
 				40CE0BFF1D5B8A8C00E92756 /* LaunchScreen.storyboard */,
@@ -152,6 +154,7 @@
 				40CE0C311D5E374200E92756 /* ProcessWatcher.swift */,
 				40CE0C341D5F01A900E92756 /* WordListWorker.swift */,
 				40CE0C2F1D5E362B00E92756 /* Constants.swift */,
+				4051A1EF1D632AFC00AAEC51 /* Extensions.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -261,7 +264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				40CE0C011D5B8A8C00E92756 /* LaunchScreen.storyboard in Resources */,
-				40CE0C271D5B8AE400E92756 /* CodeChallengeiOS.pages.pdf in Resources */,
 				40CE0BFE1D5B8A8C00E92756 /* Assets.xcassets in Resources */,
 				40CE0BFC1D5B8A8C00E92756 /* Main.storyboard in Resources */,
 				40CE0C281D5B8AE400E92756 /* words.json in Resources */,
@@ -290,8 +292,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				40CE0C351D5F01AA00E92756 /* WordListWorker.swift in Sources */,
+				4051A1F21D635C1700AAEC51 /* StartViewController.swift in Sources */,
+				4051A1F01D632AFC00AAEC51 /* Extensions.swift in Sources */,
 				40CE0C321D5E374200E92756 /* ProcessWatcher.swift in Sources */,
-				40CE0BF91D5B8A8C00E92756 /* ViewController.swift in Sources */,
+				40CE0BF91D5B8A8C00E92756 /* MainViewController.swift in Sources */,
 				40CE0BF71D5B8A8C00E92756 /* AppDelegate.swift in Sources */,
 				40CE0C301D5E362B00E92756 /* Constants.swift in Sources */,
 			);
