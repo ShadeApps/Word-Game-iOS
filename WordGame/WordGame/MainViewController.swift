@@ -16,7 +16,7 @@ class MainViewController: UIViewController, GameProcessDelegate {
 
 	var processWatcher = ProcessWatcher()
 
-	//MARK : Lifecycle & Misc
+	//MARK: Lifecycle & Misc
 
 	override func prefersStatusBarHidden() -> Bool {
 		return true
@@ -29,7 +29,7 @@ class MainViewController: UIViewController, GameProcessDelegate {
 		processWatcher.startGame(lblScore, lblTranslation: lblPossibleTranslation, lblMain: lblTargetWord)
 	}
 
-	//MARK : UI Actions
+	//MARK: UI Actions
 
 	@IBAction func btnYesTapped(sender: AnyObject) {
 		processWatcher.react(GameInput.Yes)
@@ -39,10 +39,22 @@ class MainViewController: UIViewController, GameProcessDelegate {
 		processWatcher.react(GameInput.No)
 	}
 
-	//MARK : GameProcessDelegate
+	//MARK: GameProcessDelegate
 
 	func timePassed(timeLeft: Float){
+		lblPossibleTranslation.alpha = CGFloat(timeLeft / GameProcess.TimeForIteration)
 
+		var value = self.view.frame.height - CGFloat(Float(self.view.frame.height) * (timeLeft / GameProcess.TimeForIteration))
+
+		if timeLeft == 0 {
+			value = CGFloat(UI.TopConstantHeight)
+		}
+
+		UIView.animateWithDuration(UI.AnimationDuration, delay: 0, options: [.BeginFromCurrentState, .CurveEaseInOut] , animations: {
+			self.topWordConstraint.constant = value
+			}) { (true) in
+				self.view.layoutIfNeeded()
+		}
 	}
 
 	func gameFinished(result : GameResult){

@@ -10,6 +10,7 @@ import Foundation
 
 struct UI {
 	static let TopConstantHeight = 8
+	static let AnimationDuration = 0.2
 	static let WinMessage = "Congratulations! You won! 👾🏅"
 	static let LoseMessage = "Oh no! You lost! 😩💔"
 	static let GameStartErrorMessage = "Something went wrong and it's not your fault. We're sorry 😢😓"
@@ -18,12 +19,14 @@ struct UI {
 }
 
 struct GameProcess {
-	static let TimeForIteration : Float = 15.0
+	static let TimeForIteration : Float = 30.0
 
 	static let PointsForIteration = 5
 
 	static let MaxPoints = 50
 	static let MinPoints = -50
+
+	static let RefreshFrequency = 0.3
 }
 
 enum GameResult {

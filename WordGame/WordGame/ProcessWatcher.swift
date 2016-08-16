@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 protocol GameProcessDelegate : NSObjectProtocol{
 	func timePassed(timeLeft: Float)
@@ -16,28 +17,27 @@ protocol GameProcessDelegate : NSObjectProtocol{
 class ProcessWatcher: NSObject {
 	weak var delegate : GameProcessDelegate?
 
-	var scoreLabel : UILabel!
-	var mainLabel : UILabel!
-	var translationLabel : UILabel!
-
-	let wordList : WordListWorker = WordListWorker()
+	private var scoreLabel : UILabel!
+	private var mainLabel : UILabel!
+	private var translationLabel : UILabel!
 
 	private var mainTimer : NSTimer!
 	private var score : Int = 0
 	private var timeLeft = GameProcess.TimeForIteration
-
 	private var currentWord = (en: "", es: "")
 	private var currentTranslation = (en: "", es: "")
 
+	//MARK: Public methods 
 	func startGame(lblScore : UILabel, lblTranslation : UILabel, lblMain : UILabel){
 		scoreLabel = lblScore
 		translationLabel = lblTranslation
 		mainLabel = lblMain
-		mainTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(incrementTime), userInfo: nil, repeats: true)
+		mainTimer = NSTimer.scheduledTimerWithTimeInterval(GameProcess.RefreshFrequency, target: self, selector: #selector(incrementTime), userInfo: nil, repeats: true)
 		restartIteration()
 	}
 
 	func react(input : GameInput){
+		vibrate()
 		let isCorrectTranslation : Bool = (currentWord.es == currentTranslation.es)
 
 		if input == .Yes {
@@ -63,7 +63,9 @@ class ProcessWatcher: NSObject {
 		delegate?.timePassed(timeLeft)
 	}
 
+	//MARK: Increments & decrements
 	private func endGame(result : GameResult){
+		vibrate()
 		delegate?.gameFinished(result)
 		mainTimer.invalidate()
 	}
@@ -71,7 +73,7 @@ class ProcessWatcher: NSObject {
 	private func incrementScore(){
 		score += GameProcess.PointsForIteration
 
-		if score > GameProcess.MaxPoints {
+		if score == GameProcess.MaxPoints {
 			endGame(GameResult.Win)
 			return
 		}
@@ -82,7 +84,7 @@ class ProcessWatcher: NSObject {
 	private func decrementScore(){
 		score -= GameProcess.PointsForIteration
 
-		if score < GameProcess.MinPoints {
+		if score == GameProcess.MinPoints {
 			endGame(GameResult.Lose)
 			return
 		}
@@ -90,6 +92,7 @@ class ProcessWatcher: NSObject {
 		restartIteration()
 	}
 
+	//MARK: Iteration managment
 	private func restartIteration(){
 		timeLeft = GameProcess.TimeForIteration
 		scoreLabel.text = "\(score)"
@@ -97,6 +100,7 @@ class ProcessWatcher: NSObject {
 		translationLabel.text = translationWord()
 	}
 
+	//MARK: Word managment
 	private func targetWord() -> String{
 		if let fullList = WordListWorker.fullList{
 			let randomDic : NSDictionary = fullList.objectAtIndex(Int.random(0, upper: (fullList.count - 1))) as! NSDictionary
@@ -123,5 +127,11 @@ class ProcessWatcher: NSObject {
 			return currentTranslation.es.firstLetterUppercase
 		}
 		return ""
+	}
+
+	//MARK: Feedback
+
+	private func vibrate(){
+		AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
 	}
 }

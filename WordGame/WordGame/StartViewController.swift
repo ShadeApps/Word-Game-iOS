@@ -10,6 +10,8 @@ import UIKit
 
 class StartViewController: UIViewController {
 
+	//MARK: Lifecycle & Misc
+
 	override func prefersStatusBarHidden() -> Bool {
 		return true
 	}
@@ -18,6 +20,8 @@ class StartViewController: UIViewController {
 		super.viewDidLoad()
 		self.navigationController?.navigationBarHidden = true
 	}
+
+	//MARK: UI Actions
 
 	@IBAction func btnInfoTapped(sender: AnyObject) {
 		UIApplication.sharedApplication().openURL(NSURL.init(string: AppInfo.URL)!)
